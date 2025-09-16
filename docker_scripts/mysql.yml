@@ -4,11 +4,10 @@ services:
   db:
     image: mysql
     restart: always
+    env_file: .env
     ports:
-      - 3306:3306
-    env_file:
-      - .env
+      - ${MYSQL_PORT}:3306
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     # (this is just an example, not intended to be a production configuration)
 
