@@ -1,6 +1,7 @@
 import shapefile
+import os
 
-sf = shapefile.Reader('/home/gandalf/code/test/data/geoBoundaries-IND-ADM1.shp')
+sf = shapefile.Reader(os.path.join(os.getcwd(), '../data/geoBoundaries-IND-ADM1.shp'))
 print(sf)
 
 records = sf.records()
